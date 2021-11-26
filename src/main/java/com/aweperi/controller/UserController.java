@@ -1,4 +1,4 @@
-package user;
+package com.aweperi.controller;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -7,7 +7,6 @@ import java.util.List;
 
 @RestController
 public class UserController {
-ArrayList<String> users = new ArrayList<>(List.of("Emma", "Andrews", "Mary"));
     @GetMapping("/users")
     public ArrayList<String> getUserId() {
         return users;

@@ -1,9 +1,10 @@
-package user;
+package com.aweperi.model;
 
-import org.hibernate.annotations.Table;
-import org.springframework.data.annotation.Id;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
 @Entity
@@ -11,16 +12,11 @@ import java.time.LocalDate;
 public class User {
 
     @Id
-    @SequenceGenerator(
-            name = "user_sequence",
-            sequenceName = "user_sequence",
-            allocationSize = 1
-    )
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
+            strategy = GenerationType.AUTO,
             generator = "user_sequence"
     )
-
+    private long id;
     private String name;
     private String email;
     private LocalDate dob;
